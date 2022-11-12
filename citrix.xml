@@ -14,17 +14,17 @@
     <provider
         callback="custom"
         applicationIdentity="citrix_counters.exe"
-        symbol="CitrixCountersProvider"
-        providerName="CitrixCountersProvider"
+        symbol="CitrixICA"
+        providerName="CitrixICA"
         providerGuid="{000873ea-75ca-4da3-ab19-00c3073591b8}">
 
         <counterSet
             guid="{79f42f00-c119-4f35-a0cc-153fedee585d}"
             uri="Dynatrace.PerfCounters.ICASession"
-            symbol="IcaSession"
-            name="Citrix ICA Session"
+            symbol="ICASession"
+            name="ICA Session"
             nameID="100"
-            description="Citrix ICA Session Fake Counters"
+            description="Citrix ICA Session Counters"
             descriptionID="102"
             instances="multiple">
 

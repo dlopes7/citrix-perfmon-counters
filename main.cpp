@@ -19,7 +19,7 @@ int main() {
     }
 
     // Then, create an instance to hold metrics
-    auto instance = PerfCreateInstance(CitrixCountersProvider, & IcaSessionGuid, L"Instance 1", 0);
+    auto instance = PerfCreateInstance(CitrixICA, & ICASessionGuid, L"Instance 1", 0);
     if (instance == nullptr) {
         std::cout << "Failed to create instance" << std::endl;
         status = GetLastError();
@@ -31,7 +31,7 @@ int main() {
     // This is pretty cool, we can pass a reference to a variable and the counter will be updated
     // automatically with the value of this variable
     ULONG counter_value = 50;
-    status = PerfSetCounterRefValue(CitrixCountersProvider, instance, LatencyLastRecorded, &counter_value);
+    status = PerfSetCounterRefValue(CitrixICA, instance, LatencyLastRecorded, &counter_value);
     if (status != ERROR_SUCCESS) {
         std::cout << "Failed to set counter value with status " << status << std::endl;
     }
