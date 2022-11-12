@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<instrumentationManifest
+    xmlns="http://schemas.microsoft.com/win/2004/08/events"
+    xmlns:win="https://manifests.microsoft.com/win/2004/08/windows/events"
+    xmlns:xs="https://www.w3.org/2001/XMLSchema"
+    >
+
+  <instrumentation>
+
+    <counters
+    xmlns="http://schemas.microsoft.com/win/2005/12/counters"
+    schemaVersion="2.0">
+
+    <provider
+        callback="custom"
+        applicationIdentity="citrix_counters.exe"
+        symbol="CitrixCountersProvider"
+        providerName="CitrixCountersProvider"
+        providerGuid="{000873ea-75ca-4da3-ab19-00c3073591b8}">
+
+        <counterSet
+            guid="{79f42f00-c119-4f35-a0cc-153fedee585d}"
+            uri="Dynatrace.PerfCounters.ICASession"
+            symbol="IcaSession"
+            name="Citrix ICA Session"
+            nameID="100"
+            description="Citrix ICA Session Fake Counters"
+            descriptionID="102"
+            instances="multiple">
+
+            <counter
+                id="1"
+                uri="Dynatrace.PerfCounters.ICASession.LatencyLastRecorded"
+                symbol="LatencyLastRecorded"
+                name="Latency Last Recorded"
+                nameID="104"
+                description="Latency Last Recorded"
+                descriptionID="106"
+                type="perf_counter_rawcount"
+                detailLevel="standard"
+            >
+                <counterAttributes>
+                    <counterAttribute name="reference"/>
+                </counterAttributes>
+            </counter>
+        </counterSet>
+
+    </provider>
+</counters>
+  </instrumentation>
+</instrumentationManifest>
