@@ -1,50 +1,28 @@
 #define NOWINBASEINTERLOCK
 
-#include <windows.h>
-#include "citrix_counters.h"
+#include "CitrixProvider.h"
 #include <iostream>
 #include <conio.h>
-auto cleanup() {
-    CounterCleanup();
-}
+
+using namespace std;
+
 
 int main() {
+    // Create a new CitrixProvider
+    CitrixProvider provider;
 
-    // First we must initialize the counter provider
-    auto status = CounterInitialize(nullptr, nullptr, nullptr, nullptr);
-    if (status != ERROR_SUCCESS) {
-        std::cout << "CounterInitialize failed with status " << status << std::endl;
-        cleanup();
-        return (int)status;
-    }
 
-    // Then, create an instance to hold metrics
-    auto instance = PerfCreateInstance(CitrixICA, & ICASessionGuid, L"Instance 1", 0);
-    if (instance == nullptr) {
-        std::cout << "Failed to create instance" << std::endl;
-        status = GetLastError();
-        cleanup();
-        return (int)status;
-
-    }
-
-    // This is pretty cool, we can pass a reference to a variable and the counter will be updated
-    // automatically with the value of this variable
-    ULONG counter_value = 50;
-    status = PerfSetCounterRefValue(CitrixICA, instance, LatencyLastRecorded, &counter_value);
-    if (status != ERROR_SUCCESS) {
-        std::cout << "Failed to set counter value with status " << status << std::endl;
-    }
-
-    // Increment counter_value every second until the user presses any key
+    cout << "Press any key to exit" << endl;
+    auto instance_counter = 0;
     while (!_kbhit()) {
+        instance_counter++;
+        auto instance_name = "Instance " + to_string(instance_counter);
+        provider.createICASessionInstance(instance_name);
         Sleep(1000);
-        counter_value++;
-        std::cout << "Setting counter value to " << counter_value << std::endl;
     }
 
-    cleanup();
-    return (int)status;
+
+    return 0;
 }
 
 
