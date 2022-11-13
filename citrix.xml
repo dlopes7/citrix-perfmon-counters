@@ -12,7 +12,6 @@
     schemaVersion="2.0">
 
     <provider
-        callback="custom"
         applicationIdentity="citrix_counters.exe"
         symbol="CitrixICA"
         providerName="CitrixICA"

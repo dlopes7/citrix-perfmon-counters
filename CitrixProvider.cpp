@@ -10,7 +10,7 @@
 
 CitrixProvider::CitrixProvider() {
 
-    auto status = CounterInitialize(nullptr, nullptr, nullptr, nullptr);
+    auto status = CounterInitialize();
     if (status != ERROR_SUCCESS) {
         std::cout << "CounterInitialize failed with status " << status << std::endl;
     }
