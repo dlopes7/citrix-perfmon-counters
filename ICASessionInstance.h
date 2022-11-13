@@ -12,6 +12,9 @@
 static const int MIN_ICA_SESSION_LATENCY = 5;
 static const int MAX_ICA_SESSION_LATENCY = 30;
 
+static const int MIN_ICA_SESSION_BANDWIDTH = 60;
+static const int MAX_ICA_SESSION_BANDWIDTH = 200;
+
 class ICASessionInstance {
 
     public:
@@ -36,6 +39,8 @@ class ICASessionInstance {
         unsigned long counter_latency_average;
         unsigned long latency_count;
         unsigned long latency_sum;
+        unsigned long input_session_bandwidth;
+        unsigned long output_session_bandwidth;
 
 };
 

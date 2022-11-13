@@ -34,7 +34,7 @@
                 symbol="LatencyLastRecorded"
                 name="Latency - Last Recorded"
                 nameID="104"
-                description="Latency - Last Recorded"
+                description="The last recorded latency measurement for the session."
                 descriptionID="106"
                 type="perf_counter_rawcount"
                 detailLevel="standard"
@@ -50,8 +50,40 @@
                 symbol="LatencySessionAverage"
                 name="Latency - Session Average"
                 nameID="108"
-                description="Latency - Session Average"
+                description="The average client latency over the lifetime of a session."
                 descriptionID="110"
+                type="perf_counter_rawcount"
+                detailLevel="standard"
+            >
+                <counterAttributes>
+                    <counterAttribute name="reference"/>
+                </counterAttributes>
+            </counter>
+
+            <counter
+                id="3"
+                uri="Dynatrace.PerfCounters.ICASession.InputSessionBandwidth"
+                symbol="InputSessionBandwidth"
+                name="Input Session Bandwidth"
+                nameID="112"
+                description="The bandwidth, measured in bps, used from client to server for a session."
+                descriptionID="114"
+                type="perf_counter_rawcount"
+                detailLevel="standard"
+            >
+                <counterAttributes>
+                    <counterAttribute name="reference"/>
+                </counterAttributes>
+            </counter>
+
+            <counter
+                id="4"
+                uri="Dynatrace.PerfCounters.ICASession.OutputSessionBandwidth"
+                symbol="OutputSessionBandwidth"
+                name="Output Session Bandwidth"
+                nameID="116"
+                description="The bandwidth, measured in bps, used from server to client for a session."
+                descriptionID="118"
                 type="perf_counter_rawcount"
                 detailLevel="standard"
             >
