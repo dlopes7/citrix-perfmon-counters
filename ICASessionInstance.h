@@ -32,7 +32,10 @@ class ICASessionInstance {
         std::string name;
 
         // Perfmon counters
-        unsigned long latency_last_recorded;
+        unsigned long counter_latency_last_recorded;
+        unsigned long counter_latency_average;
+        unsigned long latency_count;
+        unsigned long latency_sum;
 
 };
 

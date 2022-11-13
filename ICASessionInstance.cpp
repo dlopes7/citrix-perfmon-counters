@@ -9,7 +9,11 @@
 
 ICASessionInstance::ICASessionInstance(const std::string& name) {
     this->name = name;
-    this->latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
+    this->counter_latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
+    this->counter_latency_average = 0;
+    this->latency_count = 0;
+    this->latency_sum = 0;
+
 
     // convert name to PCWSTR
     std::wstring w_name(name.begin(), name.end());
@@ -23,10 +27,15 @@ ICASessionInstance::ICASessionInstance(const std::string& name) {
     }
 
     // Use PerfSetCounterRefValue to set the counter references to the instance variables
-    auto status = PerfSetCounterRefValue(CitrixICA, this->instance, LatencyLastRecorded, &this->latency_last_recorded);
+    auto status = PerfSetCounterRefValue(CitrixICA, this->instance, LatencyLastRecorded, &this->counter_latency_last_recorded);
     if (status != ERROR_SUCCESS) {
         std::cout << "Failed to set counter value with status " << status << std::endl;
     }
+    status = PerfSetCounterRefValue(CitrixICA, this->instance, LatencySessionAverage, &this->counter_latency_average);
+    if (status != ERROR_SUCCESS) {
+        std::cout << "Failed to set counter value with status " << status << std::endl;
+    }
+
 }
 
 ICASessionInstance::~ICASessionInstance() {
@@ -47,7 +56,12 @@ void ICASessionInstance::run(int ticks) {
         execution_count++;
 
         // Update all counters every second
-        this->latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
+        this->counter_latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
+
+        // Calculate the average
+        this->latency_sum += this->counter_latency_last_recorded;
+        this->latency_count++;
+        this->counter_latency_average = this->latency_sum / this->latency_count;
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }

@@ -32,10 +32,26 @@
                 id="1"
                 uri="Dynatrace.PerfCounters.ICASession.LatencyLastRecorded"
                 symbol="LatencyLastRecorded"
-                name="Latency Last Recorded"
+                name="Latency - Last Recorded"
                 nameID="104"
-                description="Latency Last Recorded"
+                description="Latency - Last Recorded"
                 descriptionID="106"
+                type="perf_counter_rawcount"
+                detailLevel="standard"
+            >
+                <counterAttributes>
+                    <counterAttribute name="reference"/>
+                </counterAttributes>
+            </counter>
+
+            <counter
+                id="2"
+                uri="Dynatrace.PerfCounters.ICASession.LatencySessionAverage"
+                symbol="LatencySessionAverage"
+                name="Latency - Session Average"
+                nameID="108"
+                description="Latency - Session Average"
+                descriptionID="110"
                 type="perf_counter_rawcount"
                 detailLevel="standard"
             >
