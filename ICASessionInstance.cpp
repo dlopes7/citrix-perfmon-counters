@@ -9,7 +9,7 @@
 
 ICASessionInstance::ICASessionInstance(const std::string& name) {
     this->name = name;
-    this->latency_last_recorded = 0;  // TODO - Should be a random value
+    this->latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
 
     // convert name to PCWSTR
     std::wstring w_name(name.begin(), name.end());
@@ -47,7 +47,7 @@ void ICASessionInstance::run(int ticks) {
         execution_count++;
 
         // Update all counters every second
-        this->latency_last_recorded = Random::getInt(5, 30);
+        this->latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }

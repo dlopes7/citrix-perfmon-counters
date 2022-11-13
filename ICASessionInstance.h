@@ -9,6 +9,9 @@
 #include <string>
 #include "citrix_counters.h"
 
+static const int MIN_ICA_SESSION_LATENCY = 5;
+static const int MAX_ICA_SESSION_LATENCY = 30;
+
 class ICASessionInstance {
 
     public:
