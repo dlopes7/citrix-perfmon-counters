@@ -51,7 +51,7 @@ ICASessionInstance::ICASessionInstance(const std::string& name) {
 ICASessionInstance::~ICASessionInstance() {
 
     // Attempt to delete the perfmon instance
-    std::cout << "Deleting perfmon instance" << std::endl;
+    std::cout << "Deleting " << this->name << std::endl;
     auto status = PerfDeleteInstance(CitrixICA, instance);
     if (status != ERROR_SUCCESS) {
         std::cout << "Failed to delete perfmon instance with status " << status << std::endl;

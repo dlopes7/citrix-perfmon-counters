@@ -24,7 +24,7 @@ CitrixProvider::~CitrixProvider() {
 void CitrixProvider::createICASessionInstance(const std::string &name) {
 
     if (instances.size() >= CITRIX_ICA_SESSION_MAX_INSTANCES) {
-        std::cout << "Max instances reached, cannot create instance " << name << std::endl;
+        std::cout << "Max instances reached, cannot create " << name << std::endl;
         return;
     }
     // call runICASessionInstance in a new thread
@@ -43,7 +43,6 @@ void CitrixProvider::runICASessionInstance(const std::string &name) {
     t.join();
 
     instances.erase(std::remove(instances.begin(), instances.end(), instance), instances.end());
-    // Delete the instance
     delete instance;
 
 }
