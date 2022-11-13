@@ -13,8 +13,8 @@ ICASessionInstance::ICASessionInstance(const std::string& name) {
     this->counter_latency_average = 0;
     this->latency_count = 0;
     this->latency_sum = 0;
-    this->input_session_bandwidth = 0;
-    this->output_session_bandwidth = 0;
+    this->counter_input_session_bandwidth = 0;
+    this->counter_output_session_bandwidth = 0;
 
 
     // convert name to PCWSTR
@@ -37,11 +37,11 @@ ICASessionInstance::ICASessionInstance(const std::string& name) {
     if (status != ERROR_SUCCESS) {
         std::cout << "Failed to set counter value with status " << status << std::endl;
     }
-    status = PerfSetCounterRefValue(CitrixICA, this->instance, InputSessionBandwidth, &this->input_session_bandwidth);
+    status = PerfSetCounterRefValue(CitrixICA, this->instance, InputSessionBandwidth, &this->counter_input_session_bandwidth);
     if (status != ERROR_SUCCESS) {
         std::cout << "Failed to set counter value with status " << status << std::endl;
     }
-    status = PerfSetCounterRefValue(CitrixICA, this->instance, OutputSessionBandwidth, &this->output_session_bandwidth);
+    status = PerfSetCounterRefValue(CitrixICA, this->instance, OutputSessionBandwidth, &this->counter_output_session_bandwidth);
     if (status != ERROR_SUCCESS) {
         std::cout << "Failed to set counter value with status " << status << std::endl;
     }
@@ -73,8 +73,8 @@ void ICASessionInstance::run(int ticks) {
         this->latency_count++;
         this->counter_latency_average = this->latency_sum / this->latency_count;
 
-        this->input_session_bandwidth = Random::getInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
-        this->output_session_bandwidth = Random::getInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
+        this->counter_input_session_bandwidth = Random::getInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
+        this->counter_output_session_bandwidth = Random::getInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
 
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));

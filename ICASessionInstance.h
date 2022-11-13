@@ -37,10 +37,13 @@ class ICASessionInstance {
         // Perfmon counters
         unsigned long counter_latency_last_recorded;
         unsigned long counter_latency_average;
+        unsigned long counter_input_session_bandwidth;
+        unsigned long counter_output_session_bandwidth;
+
+        // Used to calculate the counters
         unsigned long latency_count;
         unsigned long latency_sum;
-        unsigned long input_session_bandwidth;
-        unsigned long output_session_bandwidth;
+
 
 };
 
