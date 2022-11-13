@@ -1,6 +1,6 @@
 #define NOWINBASEINTERLOCK
 
-#include "CitrixProvider.cpp"
+#include "provider.cpp"
 #include <iostream>
 #include <conio.h>
 

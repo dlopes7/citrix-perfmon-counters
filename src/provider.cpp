@@ -6,7 +6,7 @@
 #include <thread>
 #include <windows.h>
 #include <vector>
-#include "ICASessionInstance.cpp"
+#include "session.cpp"
 
 static const int CITRIX_ICA_SESSION_MAX_INSTANCES = 5;
 static const int MIN_ICA_SESSION_INSTANCE_DURATION = 120;
@@ -50,7 +50,7 @@ private:
         auto instance = new ICASessionInstance(name);
         instances.push_back(instance);
 
-        int duration = Random::getInt(MIN_ICA_SESSION_INSTANCE_DURATION, MAX_ICA_SESSION_INSTANCE_DURATION);
+        int duration = getRandomInt(MIN_ICA_SESSION_INSTANCE_DURATION, MAX_ICA_SESSION_INSTANCE_DURATION);
 
         // Start a new thread to run the instance
         std::thread t(&ICASessionInstance::run, instance, duration);

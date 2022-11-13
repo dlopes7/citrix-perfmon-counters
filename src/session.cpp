@@ -6,7 +6,7 @@
 #include <thread>
 #include <windows.h>
 #include <string>
-#include "Random.cpp"
+#include "random.cpp"
 #include "citrix_counters.h"
 
 static const int MIN_ICA_SESSION_LATENCY = 5;
@@ -21,7 +21,7 @@ public:
     // Constructor
     explicit ICASessionInstance(const std::string &name) {
         this->name = name;
-        this->counter_latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
+        this->counter_latency_last_recorded = getRandomInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
         this->counter_latency_average = 0;
         this->latency_count = 0;
         this->latency_sum = 0;
@@ -79,15 +79,15 @@ public:
             execution_count++;
 
             // Update all counters every second
-            this->counter_latency_last_recorded = Random::getInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
+            this->counter_latency_last_recorded = getRandomInt(MIN_ICA_SESSION_LATENCY, MAX_ICA_SESSION_LATENCY);
 
             // Calculate the average
             this->latency_sum += this->counter_latency_last_recorded;
             this->latency_count++;
             this->counter_latency_average = this->latency_sum / this->latency_count;
 
-            this->counter_input_session_bandwidth = Random::getInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
-            this->counter_output_session_bandwidth = Random::getInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
+            this->counter_input_session_bandwidth = getRandomInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
+            this->counter_output_session_bandwidth = getRandomInt(MIN_ICA_SESSION_BANDWIDTH, MAX_ICA_SESSION_BANDWIDTH);
 
 
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
