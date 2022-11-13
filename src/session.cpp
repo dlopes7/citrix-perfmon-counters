@@ -72,6 +72,11 @@ public:
 
     }
 
+    /**
+     * Run the instance for a given duration
+     * The different counters are updated every second
+     * @param duration the duration in seconds
+     */
     void run(int ticks){
         std::cout << "Running instance '" << this->name << "' for " << ticks << " ticks" << std::endl;
         int execution_count = 0;
