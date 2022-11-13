@@ -6,7 +6,6 @@
 #include <thread>
 #include <windows.h>
 #include <vector>
-#include "citrix_counters.h"
 #include "ICASessionInstance.cpp"
 
 static const int CITRIX_ICA_SESSION_MAX_INSTANCES = 5;
