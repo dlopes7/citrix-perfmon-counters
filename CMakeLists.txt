@@ -19,7 +19,7 @@ add_custom_target(citrix_counters_resources DEPENDS ${CITRIX_RC})
 add_executable(citrix_counters
         main.cpp  # Entry point
         ${CITRIX_RC} # Resource file where the counter names are defined
-        ICASessionInstance.cpp ICASessionInstance.h
-        CitrixProvider.cpp CitrixProvider.h
-        Random.cpp Random.h
+        CitrixProvider.cpp
+        ICASessionInstance.cpp
+        Random.cpp
         )
