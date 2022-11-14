@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <instrumentationManifest
-    xmlns="http://schemas.microsoft.com/win/2004/08/events"
-    xmlns:win="https://manifests.microsoft.com/win/2004/08/windows/events"
-    xmlns:xs="https://www.w3.org/2001/XMLSchema"
-    >
+        xmlns="http://schemas.microsoft.com/win/2004/08/events"
+        xmlns:win="https://manifests.microsoft.com/win/2004/08/windows/events"
+        xmlns:xs="https://www.w3.org/2001/XMLSchema"
+>
 
-  <instrumentation>
+    <instrumentation>
 
-    <counters
-    xmlns="http://schemas.microsoft.com/win/2005/12/counters"
-    schemaVersion="2.0">
+        <counters
+                xmlns="http://schemas.microsoft.com/win/2005/12/counters"
+                schemaVersion="2.0">
 
     <provider
         applicationIdentity="citrix_counters.exe"
@@ -27,72 +27,906 @@
             descriptionID="102"
             instances="multiple">
 
-            <counter
-                id="1"
-                uri="Dynatrace.PerfCounters.ICASession.LatencyLastRecorded"
-                symbol="LatencyLastRecorded"
-                name="Latency - Last Recorded"
-                nameID="104"
-                description="The last recorded latency measurement for the session."
-                descriptionID="106"
-                type="perf_counter_rawcount"
-                detailLevel="standard"
-            >
-                <counterAttributes>
-                    <counterAttribute name="reference"/>
-                </counterAttributes>
-            </counter>
+                    <counter
+                            id="1"
+                            uri="Custom.PerfCounters.ICASession.InputAudioBandwidth"
+                            symbol="InputAudioBandwidth"
+                            name="Input Audio Bandwidth"
+                            nameID="104"
+                            description="The value for Input Audio Bandwidth"
+                            descriptionID="106"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
 
-            <counter
-                id="2"
-                uri="Dynatrace.PerfCounters.ICASession.LatencySessionAverage"
-                symbol="LatencySessionAverage"
-                name="Latency - Session Average"
-                nameID="108"
-                description="The average client latency over the lifetime of a session."
-                descriptionID="110"
-                type="perf_counter_rawcount"
-                detailLevel="standard"
-            >
-                <counterAttributes>
-                    <counterAttribute name="reference"/>
-                </counterAttributes>
-            </counter>
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
 
-            <counter
-                id="3"
-                uri="Dynatrace.PerfCounters.ICASession.InputSessionBandwidth"
-                symbol="InputSessionBandwidth"
-                name="Input Session Bandwidth"
-                nameID="112"
-                description="The bandwidth, measured in bps, used from client to server for a session."
-                descriptionID="114"
-                type="perf_counter_rawcount"
-                detailLevel="standard"
-            >
-                <counterAttributes>
-                    <counterAttribute name="reference"/>
-                </counterAttributes>
-            </counter>
+                    <counter
+                            id="2"
+                            uri="Custom.PerfCounters.ICASession.InputClipboardBandwidt"
+                            symbol="InputClipboardBandwidt"
+                            name="Input Clipboard Bandwidt"
+                            nameID="108"
+                            description="The value for Input Clipboard Bandwidt"
+                            descriptionID="110"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
 
-            <counter
-                id="4"
-                uri="Dynatrace.PerfCounters.ICASession.OutputSessionBandwidth"
-                symbol="OutputSessionBandwidth"
-                name="Output Session Bandwidth"
-                nameID="116"
-                description="The bandwidth, measured in bps, used from server to client for a session."
-                descriptionID="118"
-                type="perf_counter_rawcount"
-                detailLevel="standard"
-            >
-                <counterAttributes>
-                    <counterAttribute name="reference"/>
-                </counterAttributes>
-            </counter>
-        </counterSet>
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
 
-    </provider>
-</counters>
-  </instrumentation>
+                    <counter
+                            id="3"
+                            uri="Custom.PerfCounters.ICASession.InputCOM1Bandwidth"
+                            symbol="InputCOM1Bandwidth"
+                            name="Input COM 1 Bandwidth"
+                            nameID="112"
+                            description="The value for Input COM 1 Bandwidth"
+                            descriptionID="114"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="4"
+                            uri="Custom.PerfCounters.ICASession.InputCOM2Bandwidth"
+                            symbol="InputCOM2Bandwidth"
+                            name="Input COM 2 Bandwidth"
+                            nameID="116"
+                            description="The value for Input COM 2 Bandwidth"
+                            descriptionID="118"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="5"
+                            uri="Custom.PerfCounters.ICASession.InputCOMBandwidth"
+                            symbol="InputCOMBandwidth"
+                            name="Input COM Bandwidth"
+                            nameID="120"
+                            description="The value for Input COM Bandwidth"
+                            descriptionID="122"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="6"
+                            uri="Custom.PerfCounters.ICASession.InputControlChannelBandwidth"
+                            symbol="InputControlChannelBandwidth"
+                            name="Input Control Channel Bandwidth"
+                            nameID="124"
+                            description="The value for Input Control Channel Bandwidth"
+                            descriptionID="126"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="7"
+                            uri="Custom.PerfCounters.ICASession.InputDriveBandwidth"
+                            symbol="InputDriveBandwidth"
+                            name="Input Drive Bandwidth"
+                            nameID="128"
+                            description="The value for Input Drive Bandwidth"
+                            descriptionID="130"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="8"
+                            uri="Custom.PerfCounters.ICASession.InputFontDataBandwidth"
+                            symbol="InputFontDataBandwidth"
+                            name="Input Font Data Bandwidth"
+                            nameID="132"
+                            description="The value for Input Font Data Bandwidth"
+                            descriptionID="134"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="9"
+                            uri="Custom.PerfCounters.ICASession.InputHDXMediaStreamforFlashDataBandwidth"
+                            symbol="InputHDXMediaStreamforFlashDataBandwidth"
+                            name="Input HDX MediaStream for Flash Data Bandwidth"
+                            nameID="136"
+                            description="The value for Input HDX MediaStream for Flash Data Bandwidth"
+                            descriptionID="138"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="10"
+                            uri="Custom.PerfCounters.ICASession.InputHDXMediaStreamforFlashv2DataBandwidth"
+                            symbol="InputHDXMediaStreamforFlashv2DataBandwidth"
+                            name="Input HDX MediaStream for Flash v2 Data Bandwidth"
+                            nameID="140"
+                            description="The value for Input HDX MediaStream for Flash v2 Data Bandwidth"
+                            descriptionID="142"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="11"
+                            uri="Custom.PerfCounters.ICASession.InputLicensingBandwidth"
+                            symbol="InputLicensingBandwidth"
+                            name="Input Licensing Bandwidth"
+                            nameID="144"
+                            description="The value for Input Licensing Bandwidth"
+                            descriptionID="146"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="12"
+                            uri="Custom.PerfCounters.ICASession.InputLPT1Bandwidth"
+                            symbol="InputLPT1Bandwidth"
+                            name="Input LPT 1 Bandwidth"
+                            nameID="148"
+                            description="The value for Input LPT 1 Bandwidth"
+                            descriptionID="150"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="13"
+                            uri="Custom.PerfCounters.ICASession.InputLPT2Bandwidth"
+                            symbol="InputLPT2Bandwidth"
+                            name="Input LPT 2 Bandwidth"
+                            nameID="152"
+                            description="The value for Input LPT 2 Bandwidth"
+                            descriptionID="154"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="14"
+                            uri="Custom.PerfCounters.ICASession.InputPNBandwidth"
+                            symbol="InputPNBandwidth"
+                            name="Input PN Bandwidth"
+                            nameID="156"
+                            description="The value for Input PN Bandwidth"
+                            descriptionID="158"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="15"
+                            uri="Custom.PerfCounters.ICASession.InputPrinterBandwidth"
+                            symbol="InputPrinterBandwidth"
+                            name="Input Printer Bandwidth"
+                            nameID="160"
+                            description="The value for Input Printer Bandwidth"
+                            descriptionID="162"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="16"
+                            uri="Custom.PerfCounters.ICASession.InputSeamlessBandwidth"
+                            symbol="InputSeamlessBandwidth"
+                            name="Input Seamless Bandwidth"
+                            nameID="164"
+                            description="The value for Input Seamless Bandwidth"
+                            descriptionID="166"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="17"
+                            uri="Custom.PerfCounters.ICASession.InputSessionBandwidth"
+                            symbol="InputSessionBandwidth"
+                            name="Input Session Bandwidth"
+                            nameID="168"
+                            description="The value for Input Session Bandwidth"
+                            descriptionID="170"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="18"
+                            uri="Custom.PerfCounters.ICASession.InputSessionCompression"
+                            symbol="InputSessionCompression"
+                            name="Input Session Compression"
+                            nameID="172"
+                            description="The value for Input Session Compression"
+                            descriptionID="174"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="19"
+                            uri="Custom.PerfCounters.ICASession.InputSessionLineSpeed"
+                            symbol="InputSessionLineSpeed"
+                            name="Input Session Line Speed"
+                            nameID="176"
+                            description="The value for Input Session Line Speed"
+                            descriptionID="178"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="20"
+                            uri="Custom.PerfCounters.ICASession.InputSmartCardBandwidth"
+                            symbol="InputSmartCardBandwidth"
+                            name="Input Smart Card Bandwidth"
+                            nameID="180"
+                            description="The value for Input Smart Card Bandwidth"
+                            descriptionID="182"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="21"
+                            uri="Custom.PerfCounters.ICASession.InputSpeedScreenDataChannelBandwidth"
+                            symbol="InputSpeedScreenDataChannelBandwidth"
+                            name="Input SpeedScreen Data Channel Bandwidth"
+                            nameID="184"
+                            description="The value for Input SpeedScreen Data Channel Bandwidth"
+                            descriptionID="186"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="22"
+                            uri="Custom.PerfCounters.ICASession.InputSpeedScreenMultimediaAccelerationBandwidth"
+                            symbol="InputSpeedScreenMultimediaAccelerationBandwidth"
+                            name="Input SpeedScreen Multimedia Acceleration Bandwidth"
+                            nameID="188"
+                            description="The value for Input SpeedScreen Multimedia Acceleration Bandwidth"
+                            descriptionID="190"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="23"
+                            uri="Custom.PerfCounters.ICASession.InputTextEchoBandwidth"
+                            symbol="InputTextEchoBandwidth"
+                            name="Input Text Echo Bandwidth"
+                            nameID="192"
+                            description="The value for Input Text Echo Bandwidth"
+                            descriptionID="194"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="24"
+                            uri="Custom.PerfCounters.ICASession.InputThinWireBandwidth"
+                            symbol="InputThinWireBandwidth"
+                            name="Input ThinWire Bandwidth"
+                            nameID="196"
+                            description="The value for Input ThinWire Bandwidth"
+                            descriptionID="198"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="25"
+                            uri="Custom.PerfCounters.ICASession.InputTWAINBandwidth"
+                            symbol="InputTWAINBandwidth"
+                            name="Input TWAIN Bandwidth"
+                            nameID="200"
+                            description="The value for Input TWAIN Bandwidth"
+                            descriptionID="202"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="26"
+                            uri="Custom.PerfCounters.ICASession.InputUSBBandwidth"
+                            symbol="InputUSBBandwidth"
+                            name="Input USB Bandwidth"
+                            nameID="204"
+                            description="The value for Input USB Bandwidth"
+                            descriptionID="206"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="27"
+                            uri="Custom.PerfCounters.ICASession.LatencyLastRecorded"
+                            symbol="LatencyLastRecorded"
+                            name="Latency - Last Recorded"
+                            nameID="208"
+                            description="The value for Latency - Last Recorded"
+                            descriptionID="210"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="28"
+                            uri="Custom.PerfCounters.ICASession.LatencySessionAverage"
+                            symbol="LatencySessionAverage"
+                            name="Latency - Session Average"
+                            nameID="212"
+                            description="The value for Latency - Session Average"
+                            descriptionID="214"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="29"
+                            uri="Custom.PerfCounters.ICASession.LatencySessionDeviation"
+                            symbol="LatencySessionDeviation"
+                            name="Latency - Session Deviation"
+                            nameID="216"
+                            description="The value for Latency - Session Deviation"
+                            descriptionID="218"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="30"
+                            uri="Custom.PerfCounters.ICASession.OutputAudioBandwidth"
+                            symbol="OutputAudioBandwidth"
+                            name="Output Audio Bandwidth"
+                            nameID="220"
+                            description="The value for Output Audio Bandwidth"
+                            descriptionID="222"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="31"
+                            uri="Custom.PerfCounters.ICASession.OutputClipboardBandwidth"
+                            symbol="OutputClipboardBandwidth"
+                            name="Output Clipboard Bandwidth"
+                            nameID="224"
+                            description="The value for Output Clipboard Bandwidth"
+                            descriptionID="226"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="32"
+                            uri="Custom.PerfCounters.ICASession.OutputCOM1Bandwidth"
+                            symbol="OutputCOM1Bandwidth"
+                            name="Output COM 1 Bandwidth"
+                            nameID="228"
+                            description="The value for Output COM 1 Bandwidth"
+                            descriptionID="230"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="33"
+                            uri="Custom.PerfCounters.ICASession.OutputCOM2Bandwidth"
+                            symbol="OutputCOM2Bandwidth"
+                            name="Output COM 2 Bandwidth"
+                            nameID="232"
+                            description="The value for Output COM 2 Bandwidth"
+                            descriptionID="234"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="34"
+                            uri="Custom.PerfCounters.ICASession.OutputCOMBandwidth"
+                            symbol="OutputCOMBandwidth"
+                            name="Output COM Bandwidth"
+                            nameID="236"
+                            description="The value for Output COM Bandwidth"
+                            descriptionID="238"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="35"
+                            uri="Custom.PerfCounters.ICASession.OutputControlChannelBandwidth"
+                            symbol="OutputControlChannelBandwidth"
+                            name="Output Control Channel Bandwidth"
+                            nameID="240"
+                            description="The value for Output Control Channel Bandwidth"
+                            descriptionID="242"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="36"
+                            uri="Custom.PerfCounters.ICASession.OutputDriveBandwidth"
+                            symbol="OutputDriveBandwidth"
+                            name="Output Drive Bandwidth"
+                            nameID="244"
+                            description="The value for Output Drive Bandwidth"
+                            descriptionID="246"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="37"
+                            uri="Custom.PerfCounters.ICASession.OutputFontDataBandwidth"
+                            symbol="OutputFontDataBandwidth"
+                            name="Output Font Data Bandwidth"
+                            nameID="248"
+                            description="The value for Output Font Data Bandwidth"
+                            descriptionID="250"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="38"
+                            uri="Custom.PerfCounters.ICASession.OutputHDXMediaStreamforFlashDataBandwidth"
+                            symbol="OutputHDXMediaStreamforFlashDataBandwidth"
+                            name="Output HDX MediaStream for Flash Data Bandwidth"
+                            nameID="252"
+                            description="The value for Output HDX MediaStream for Flash Data Bandwidth"
+                            descriptionID="254"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="39"
+                            uri="Custom.PerfCounters.ICASession.OutputHDXMediaStreamforFlashv2DataBandwidth"
+                            symbol="OutputHDXMediaStreamforFlashv2DataBandwidth"
+                            name="Output HDX MediaStream for Flash v2 Data Bandwidth"
+                            nameID="256"
+                            description="The value for Output HDX MediaStream for Flash v2 Data Bandwidth"
+                            descriptionID="258"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="40"
+                            uri="Custom.PerfCounters.ICASession.OutputLicensingBandwidth"
+                            symbol="OutputLicensingBandwidth"
+                            name="Output Licensing Bandwidth"
+                            nameID="260"
+                            description="The value for Output Licensing Bandwidth"
+                            descriptionID="262"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="41"
+                            uri="Custom.PerfCounters.ICASession.OutputLPT1Bandwidth"
+                            symbol="OutputLPT1Bandwidth"
+                            name="Output LPT 1 Bandwidth"
+                            nameID="264"
+                            description="The value for Output LPT 1 Bandwidth"
+                            descriptionID="266"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="42"
+                            uri="Custom.PerfCounters.ICASession.OutputLPT2Bandwidth"
+                            symbol="OutputLPT2Bandwidth"
+                            name="Output LPT 2 Bandwidth"
+                            nameID="268"
+                            description="The value for Output LPT 2 Bandwidth"
+                            descriptionID="270"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="43"
+                            uri="Custom.PerfCounters.ICASession.OutputPNBandwidth"
+                            symbol="OutputPNBandwidth"
+                            name="Output PN Bandwidth"
+                            nameID="272"
+                            description="The value for Output PN Bandwidth"
+                            descriptionID="274"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="44"
+                            uri="Custom.PerfCounters.ICASession.OutputPrinterBandwidth"
+                            symbol="OutputPrinterBandwidth"
+                            name="Output Printer Bandwidth"
+                            nameID="276"
+                            description="The value for Output Printer Bandwidth"
+                            descriptionID="278"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="45"
+                            uri="Custom.PerfCounters.ICASession.OutputSeamlessBandwidth"
+                            symbol="OutputSeamlessBandwidth"
+                            name="Output Seamless Bandwidth"
+                            nameID="280"
+                            description="The value for Output Seamless Bandwidth"
+                            descriptionID="282"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="46"
+                            uri="Custom.PerfCounters.ICASession.OutputSessionBandwidth"
+                            symbol="OutputSessionBandwidth"
+                            name="Output Session Bandwidth"
+                            nameID="284"
+                            description="The value for Output Session Bandwidth"
+                            descriptionID="286"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="47"
+                            uri="Custom.PerfCounters.ICASession.OutputSessionCompression"
+                            symbol="OutputSessionCompression"
+                            name="Output Session Compression"
+                            nameID="288"
+                            description="The value for Output Session Compression"
+                            descriptionID="290"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="48"
+                            uri="Custom.PerfCounters.ICASession.OutputSessionLineSpeed"
+                            symbol="OutputSessionLineSpeed"
+                            name="Output Session Line Speed"
+                            nameID="292"
+                            description="The value for Output Session Line Speed"
+                            descriptionID="294"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="49"
+                            uri="Custom.PerfCounters.ICASession.OutputSmartCardBandwidth"
+                            symbol="OutputSmartCardBandwidth"
+                            name="Output Smart Card Bandwidth"
+                            nameID="296"
+                            description="The value for Output Smart Card Bandwidth"
+                            descriptionID="298"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="50"
+                            uri="Custom.PerfCounters.ICASession.OutputSpeedScreenDataChannelBandwidth"
+                            symbol="OutputSpeedScreenDataChannelBandwidth"
+                            name="Output SpeedScreen Data Channel Bandwidth"
+                            nameID="300"
+                            description="The value for Output SpeedScreen Data Channel Bandwidth"
+                            descriptionID="302"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="51"
+                            uri="Custom.PerfCounters.ICASession.OutputSpeedScreenMultimediaAccelerationBandwidth"
+                            symbol="OutputSpeedScreenMultimediaAccelerationBandwidth"
+                            name="Output SpeedScreen Multimedia Acceleration Bandwidth"
+                            nameID="304"
+                            description="The value for Output SpeedScreen Multimedia Acceleration Bandwidth"
+                            descriptionID="306"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="52"
+                            uri="Custom.PerfCounters.ICASession.OutputTextEchoBandwidth"
+                            symbol="OutputTextEchoBandwidth"
+                            name="Output Text Echo Bandwidth"
+                            nameID="308"
+                            description="The value for Output Text Echo Bandwidth"
+                            descriptionID="310"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="53"
+                            uri="Custom.PerfCounters.ICASession.OutputThinWireBandwidth"
+                            symbol="OutputThinWireBandwidth"
+                            name="Output ThinWire Bandwidth"
+                            nameID="312"
+                            description="The value for Output ThinWire Bandwidth"
+                            descriptionID="314"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="54"
+                            uri="Custom.PerfCounters.ICASession.OutputTWAINBandwidth"
+                            symbol="OutputTWAINBandwidth"
+                            name="Output TWAIN Bandwidth"
+                            nameID="316"
+                            description="The value for Output TWAIN Bandwidth"
+                            descriptionID="318"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="55"
+                            uri="Custom.PerfCounters.ICASession.OutputUSBBandwidth"
+                            symbol="OutputUSBBandwidth"
+                            name="Output USB Bandwidth"
+                            nameID="320"
+                            description="The value for Output USB Bandwidth"
+                            descriptionID="322"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+                    <counter
+                            id="56"
+                            uri="Custom.PerfCounters.ICASession.ResourceShares"
+                            symbol="ResourceShares"
+                            name="Resource Shares"
+                            nameID="324"
+                            description="The value for Resource Shares"
+                            descriptionID="326"
+                            type="perf_counter_rawcount"
+                            detailLevel="standard">
+
+                        <counterAttributes>
+                            <counterAttribute name="reference"/>
+                        </counterAttributes>
+                    </counter>
+
+
+                </counterSet>
+
+            </provider>
+        </counters>
+    </instrumentation>
 </instrumentationManifest>
