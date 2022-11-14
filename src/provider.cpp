@@ -34,9 +34,7 @@ public:
     }
 
     /**
-     * Create a new ICA Session Instance
-     * This also starts a thread to run the instance
-     * The instance is automatically deleted when the thread ends
+     * @brief Create a new ICA Session Instance and run it in a separate thread
      * @param name The name of the instance
      */
     void createICASessionInstance(const std::string &name) {

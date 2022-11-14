@@ -30,12 +30,11 @@ public:
         this->counter_input_session_bandwidth = 0;
         this->counter_output_session_bandwidth = 0;
 
-
         // convert name to PCWSTR
         std::wstring w_name(name.begin(), name.end());
         PCWSTR w_name_ptr = w_name.c_str();
 
-
+        // Create the instance via Windows APIs
         this->instance = PerfCreateInstance(CitrixICA, &ICASessionGuid, w_name_ptr, 0);
         if (this->instance == nullptr) {
             auto status = GetLastError();
@@ -75,8 +74,7 @@ public:
     }
 
     /**
-     * Run the instance for a given duration
-     * The different counters are updated every second
+     * @brief Run the instance for a given duration, and update the counters every second
      * @param duration the duration in seconds
      */
     void run(int ticks){

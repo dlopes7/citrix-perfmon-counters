@@ -1,11 +1,14 @@
-# wmi_class is an argument passed to the script
-# Example powershell -f .\generate_xml.ps1 Win32_PerfRawData_PerfOS_Processor
+# Example powershell -f generate_xml.ps1 Win32_PerfRawData_PerfOS_Processor
 $wmi_class = $args[0]
+
+if ($wmi_class -notmatch "^Win32_PerfRawData_") {
+    Write-Host "WMI class must start with Win32_PerfRawData_"
+    exit
+}
 
 Write-Host "Generating XML for $wmi_class"
 
 $split_values = $wmi_class -split "_"
-
 $provider_name = $split_values[2]
 $counter_set_name = $split_values[3]
 
