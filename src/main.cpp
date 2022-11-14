@@ -4,7 +4,7 @@
 
 int main() {
     // Create a new CitrixProvider
-    CitrixProvider provider;
+    auto provider = CitrixProvider();
 
 
     std::cout << "Press any key to exit" << std::endl;
