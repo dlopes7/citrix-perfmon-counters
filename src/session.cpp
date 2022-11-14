@@ -1,6 +1,8 @@
 //
 // Created by dlopes7 on 11/13/2022.
 //
+#ifndef CITRIX_COUNTERS_SESSION_H
+#define CITRIX_COUNTERS_SESSION_H
 
 #include <iostream>
 #include <thread>
@@ -122,3 +124,4 @@ private:
 
 };
 
+#endif //CITRIX_COUNTERS_SESSION_H

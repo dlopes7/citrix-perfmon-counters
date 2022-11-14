@@ -2,6 +2,8 @@
 // Created by dlopes7 on 11/13/2022.
 //
 
+#ifndef CITRIX_COUNTERS_RANDOM_H
+#define CITRIX_COUNTERS_RANDOM_H
 #include <random>
 
 static std::random_device random_device = std::random_device();
@@ -19,3 +21,4 @@ static int getRandomInt(int min, int max) {
     return random_number;
 }
 
+#endif //CITRIX_COUNTERS_RANDOM_H

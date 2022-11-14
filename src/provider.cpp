@@ -2,6 +2,9 @@
 // Created by dlopes7 on 11/13/2022.
 //
 
+#ifndef CITRIX_COUNTERS_CITRIX_PROVIDER_H
+#define CITRIX_COUNTERS_CITRIX_PROVIDER_H
+
 #include <iostream>
 #include <thread>
 #include <windows.h>
@@ -68,3 +71,5 @@ private:
 
     }
 };
+
+#endif //CITRIX_COUNTERS_CITRIX_PROVIDER_H
