@@ -1,5 +1,3 @@
-#define NOWINBASEINTERLOCK
-
 #include "provider.cpp"
 #include <iostream>
 #include <conio.h>
