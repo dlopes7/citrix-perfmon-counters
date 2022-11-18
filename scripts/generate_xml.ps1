@@ -1,14 +1,20 @@
-# Example powershell -f generate_xml.ps1 Win32_PerfRawData_PerfOS_Processor
-$wmi_class = $args[0]
+# Example powershell -f generate_xml.ps1 -wmiClass Win32_PerfRawData_PerfOS_Processor
 
-if ($wmi_class -notmatch "^Win32_PerfRawData_") {
+[CmdletBinding()]
+param (
+     [Parameter(Mandatory)][string]$wmiClass,
+     [string]$hostName = "localhost"
+
+)
+
+if ($wmiClass -notmatch "^Win32_PerfRawData_") {
     Write-Host "WMI class must start with Win32_PerfRawData_"
     exit
 }
 
-Write-Host "Generating XML for $wmi_class"
+Write-Host "Generating XML for $wmiClass"
 
-$split_values = $wmi_class -split "_"
+$split_values = $wmiClass -split "_"
 $provider_name = $split_values[2]
 $counter_set_name = $split_values[3]
 
@@ -62,7 +68,7 @@ $final_xml = $final_xml -replace "<counter_set_guid>", [guid]::NewGuid()
 Write-Host "Capturing properties for Provider '$provider_name' and Counter Set '$counter_set_name'"
 
 # Get all properties that have CounterType in the Qualifiers
-$properties = (Get-CimClass -ClassName $wmi_class).CimClassProperties | Where-Object { $_.Qualifiers.Name -contains "CounterType" }
+$properties = (Get-CimClass -ComputerName $hostName -ClassName $wmiClass).CimClassProperties | Where-Object { $_.Qualifiers.Name -contains "CounterType" }
 
 $counter_template = @"
 <counter

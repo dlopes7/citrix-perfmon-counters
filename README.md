@@ -31,7 +31,7 @@ The script under `scripts/generate_xml.ps1` can be used on a target machine wher
 Example:
 
 ```bash
-powershell -f scripts/generate_xml.ps1  Win32_PerfRawData_PerfOS_Processor
+powershell -f scripts/generate_xml.ps1 -wmiClass Win32_PerfRawData_PerfOS_Processor
 ```
 
 Will generate a file called `PerfOS.xml` that can be used to register the counters.
