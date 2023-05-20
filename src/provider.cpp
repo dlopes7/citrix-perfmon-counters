@@ -40,7 +40,7 @@ public:
     void createICASessionInstance(const std::string &name) {
 
         if (instances.size() >= CITRIX_ICA_SESSION_MAX_INSTANCES) {
-            std::cout << "Max instances reached, cannot create " << name << std::endl;
+        //            std::cout << "Max instances reached, cannot create " << name << std::endl;
             return;
         }
         // call runICASessionInstance in a new thread

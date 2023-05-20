@@ -11,13 +11,13 @@ int main() {
     auto instance_counter = 0;
     while (!_kbhit()) {
         instance_counter++;
-        auto instance_name = "Instance " + std::to_string(instance_counter);
+        auto instance_name = "Instance " + std::to_string(instance_counter % 5 + 1);
         provider.createICASessionInstance(instance_name);
         Sleep(1000);
     }
 
 
-    return 0;
+    return 0;=
 }
 
 
